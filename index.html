@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Nikethan 💗</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff6f91, #ffc1cc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 22px;
+      width: 90%;
+      max-width: 360px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+    h1, h2 {
+      color: #ff3366;
+    }
+    p {
+      color: #555;
+      font-size: 15px;
+    }
+    button {
+      padding: 12px 22px;
+      margin: 10px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .yes {
+      background: #ff3366;
+      color: white;
+    }
+    .no {
+      background: #ddd;
+      color: #888;
+      cursor: not-allowed;
+    }
+    .hidden {
+      display: none;
+    }
+    .promise {
+      background: #ffe0ea;
+      color: #ff3366;
+      width: 100%;
+    }
+    .gift {
+      background: #ff3366;
+      color: white;
+      width: 100%;
+    }
+    .message {
+      margin-top: 15px;
+      font-size: 15px;
+      color: #444;
+      animation: fadeIn 0.6s ease-in;
+      white-space: pre-line;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .big {
+      font-size: 22px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <!-- STEP 1 -->
+    <div id="step1">
+      <h1>Nikethan 💗</h1>
+      <p>From Madhura, always yours 🫂</p>
+      <h2>Will you be my Valentine?</h2>
+      <button class="yes" onclick="showPromises()">YES 💘</button>
+      <button class="no">NO 🙈</button>
+    </div>
+
+    <!-- STEP 2 -->
+    <div id="step2" class="hidden">
+      <h1>My Promises to You 💍</h1>
+
+      <button class="promise" onclick="showMessage(1)">Promise 1 💕</button>
+      <button class="promise" onclick="showMessage(2)">Promise 2 💖</button>
+      <button class="promise" onclick="showMessage(3)">Promise 3 💝</button>
+
+      <div id="msg" class="message"></div>
+
+      <button id="giftBtn" class="gift hidden" onclick="openGift()">Open your gift 🎁</button>
+    </div>
+
+    <!-- STEP 3 -->
+    <div id="step3" class="hidden">
+      <h1>For You 🥹💗</h1>
+      <div class="big">
+        😘💋  
+        <br><br>
+        🫂🫂🫂
+      </div>
+      <p class="message">
+        A kiss for your smile 😘  
+        A hug to remind you I’m always here 🫂  
+        <br><br>
+        I love you my boy 💗🫂  
+        <br>
+        – Madhura
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    let promiseCount = 0;
+
+    function showPromises() {
+      document.getElementById("step1").style.display = "none";
+      document.getElementById("step2").style.display = "block";
+    }
+
+    function showMessage(num) {
+      const messages = {
+        1: "I promise to choose you every single day, just like I did 4 years ago 🤍",
+        2: "I promise to be your peace, your strength, and your safest place 🫂",
+        3: "I promise to love you deeply, softly, and endlessly 💞"
+      };
+      document.getElementById("msg").innerText = messages[num];
+
+      promiseCount++;
+      if (promiseCount >= 3) {
+        document.getElementById("giftBtn").classList.remove("hidden");
+      }
+    }
+
+    function openGift() {
+      document.getElementById("step2").style.display = "none";
+      document.getElementById("step3").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
